@@ -3,7 +3,7 @@ import {ButtonList, ButtonImg, ImageBtn} from './styledComponents'
 const ButtonImages = props => {
   const {buttonDetails, onGetBtnResult} = props
   const {id, imageUrl} = buttonDetails
-  // const lowerCaseData = id.lowerCase()
+  const lowerCaseId = id.toLowerCase() // converting the id to lowercase
 
   const onClickButton = () => {
     onGetBtnResult(id, imageUrl)
@@ -11,7 +11,10 @@ const ButtonImages = props => {
 
   return (
     <ButtonList>
-      <ButtonImg type="button" onClick={onClickButton}>
+      <ButtonImg 
+         type="button" 
+         onClick={onClickButton}  
+         data-testid={`${lowerCaseId}Button`}> // update the testid here
         <ImageBtn src={imageUrl} alt={id} />
       </ButtonImg>
     </ButtonList>
