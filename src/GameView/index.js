@@ -59,7 +59,7 @@ class GameView extends Component {
         score: prevState.score - 1,
         resultMessage: 'YOU LOSE',
       }))
-    } else if (choicesList[number].id === 'Rock' && id === 'PAPER') {
+    } else if (choicesList[number].id === 'ROCK' && id === 'PAPER') {
       this.setState(prevState => ({
         showResults: true,
         myChoice: [id, imageUrl],
@@ -91,7 +91,7 @@ class GameView extends Component {
         score: prevState.score - 1,
         resultMessage: 'YOU LOSE',
       }))
-    } else if (choicesList[number].id === 'PAPER' && id === 'PAPER') {
+    } else if (choicesList[number].id === 'PAPER' && id === 'SCISSORS') {
       this.setState(prevState => ({
         showResults: true,
         myChoice: [id, imageUrl],
